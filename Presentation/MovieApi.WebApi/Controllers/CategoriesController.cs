@@ -41,6 +41,7 @@ namespace MovieApi.WebApi.Controllers
         {
             await _removeCategoryCommandHandler.Handle(new RemoveCategoryCommand(id));
             return Ok("Kategori silme işlemi tamamlandı.");
+
         }
         [HttpPut]
         public async Task<IActionResult> UpdateCategory(UpdateCategoryCommand command)
