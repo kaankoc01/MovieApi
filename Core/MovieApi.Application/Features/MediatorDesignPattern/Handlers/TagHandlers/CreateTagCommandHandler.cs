@@ -21,11 +21,11 @@ namespace MovieApi.Application.Features.MediatorDesignPattern.Handlers.TagHandle
 
         public async Task Handle(CreateTagCommand request, CancellationToken cancellationToken)
         {
-            _context.Tags.Add(new Domain.Entities.Tag
+            await _context.Tags.AddAsync(new Domain.Entities.Tag
             {
                 Title = request.Title
             });
-            await _context.SaveChangesAsync(cancellationToken);
+            await _context.SaveChangesAsync();
         }
     }
 }

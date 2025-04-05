@@ -24,6 +24,6 @@ namespace MovieApi.Application.Features.MediatorDesignPattern.Handlers.TagHandle
             _context.Tags.Remove(values);
             await _context.SaveChangesAsync();
         }
-    {
+
     }
 }
