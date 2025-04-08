@@ -19,8 +19,8 @@ namespace MovieApi.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> TagList()
         {
-            var result = await _mediator.Send(new GetTagQuery());
-            return Ok(result);
+            var value = await _mediator.Send(new GetTagQuery());
+            return Ok(value);
         }
         [HttpPost]
         public async Task<IActionResult> CreateTag(CreateTagCommand command)
@@ -43,8 +43,8 @@ namespace MovieApi.WebApi.Controllers
         [HttpGet("GetTag")]
         public async Task<IActionResult> GetTag(int id)
         {
-            var result = await _mediator.Send(new GetTagByIdQuery(id));
-            return Ok(result);
+            var value = await _mediator.Send(new GetTagByIdQuery(id));
+            return Ok(value);
         }
     }
 }

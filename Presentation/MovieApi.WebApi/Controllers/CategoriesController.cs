@@ -26,8 +26,8 @@ namespace MovieApi.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> CategoryList()
         {
-            var result = await _getCategoryQueryHandler.Handle();
-            return Ok(result);
+            var value = await _getCategoryQueryHandler.Handle();
+            return Ok(value);
         }
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryCommand command)
@@ -52,8 +52,8 @@ namespace MovieApi.WebApi.Controllers
         [HttpGet("GetCategory")]
         public async Task<IActionResult> GetCategory(int id)
         {
-            var result = await _getCategoryByIdQueryHandler.Handle(new GetCategoryByIdQuery(id));
-            return Ok(result);
+            var value = await _getCategoryByIdQueryHandler.Handle(new GetCategoryByIdQuery(id));
+            return Ok(value);
         }
     }
 }

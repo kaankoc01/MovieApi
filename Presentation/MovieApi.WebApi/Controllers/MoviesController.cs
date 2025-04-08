@@ -26,8 +26,8 @@ namespace MovieApi.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> MovieList()
         {
-            var result = await _getMovieQueryHandler.Handle();
-            return Ok(result);
+            var value = await _getMovieQueryHandler.Handle();
+            return Ok(value);
         }
         [HttpPost]
         public async Task<IActionResult> CreateMovie(CreateMovieCommand command)
@@ -44,8 +44,8 @@ namespace MovieApi.WebApi.Controllers
         [HttpGet("GetMovie")]
         public async Task<IActionResult> GetMovie(int id)
         {
-            var result = await _getMovieByIdQueryHandler.Handle(new GetMovieByIdQuery(id));
-            return Ok(result);
+            var value = await _getMovieByIdQueryHandler.Handle(new GetMovieByIdQuery(id));
+            return Ok(value);
         }
         [HttpPut]
         public async Task<IActionResult> UpdateMovie(UpdateMovieCommand command)

@@ -19,8 +19,8 @@ namespace MovieApi.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> CastList()
         {
-            var result = await _mediator.Send(new GetCastQuery());
-            return Ok(result);
+            var value  = await _mediator.Send(new GetCastQuery());
+            return Ok(value);
         }
         [HttpPost]
         public async Task<IActionResult> CreateCast(CreateCastCommand command)
@@ -37,8 +37,8 @@ namespace MovieApi.WebApi.Controllers
         [HttpGet("GetCastById")]
         public async Task<IActionResult> GetCastById(int id)
         {
-            var result = await _mediator.Send(new GetCastByIdQuery(id));
-            return Ok(result);
+            var value = await _mediator.Send(new GetCastByIdQuery(id));
+            return Ok(value);
         }
         [HttpPut]
         public async Task<IActionResult> UpdateCast(UpdateCastCommand command)
